@@ -1,0 +1,6 @@
+<context>
+	<Resource name="bancoTechsolutions" auth="Container" 
+		type="javax.sql.DataSource" username="techsolutions" password="techsolution"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/techsolutions"/>
+</context>
