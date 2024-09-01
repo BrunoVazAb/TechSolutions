@@ -3,14 +3,15 @@ package Model;
 import java.sql.Date;
 
 public class chamadosModel {
-	private int usuario_id,tecnico_id;
+	private int id, usuario_id,tecnico_id;
 	private String descricao,prioridade,status;
 	private Date data_abertura;
 	private Date data_fechamento;
 
-	public chamadosModel(int usuario_id, int tecnico_id, String descricao, String prioridade, String status,
+	public chamadosModel( int id, int usuario_id, int tecnico_id, String descricao, String prioridade, String status,
 			Date data_abertura, Date data_fechamento) {
 		super();
+		this.id = id;
 		this.usuario_id = usuario_id;
 		this.tecnico_id = tecnico_id;
 		this.descricao = descricao;
@@ -19,6 +20,15 @@ public class chamadosModel {
 		this.data_abertura = data_abertura;
 		this.data_fechamento = data_fechamento;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public int getUsuario_id() {
 		return usuario_id;
 	}

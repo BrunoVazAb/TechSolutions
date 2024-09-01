@@ -11,18 +11,25 @@
     <h2>Login do Administrador</h2>
     <form action="login" method="post">
         <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <br>
+        <input type="email"  id="email" name="email" required><br><br>
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" required>
-        <br>
+        <input type="password" id="senha" name="senha" required><br><br>
         <input type="submit" value="Login">
+        
+		<% 
+		    Boolean status = (Boolean) request.getAttribute("status"); 
+		    String msg = null;
+		
+		    if (status != null) {
+		        if (status == false) {
+		        	msg = "<span style='color: red'>ERRO! - Email ou senha incorreto .</span>";
+		        }
+		    }
+		%>
+	
+		<% if (msg != null) { %>
+		    <p><%= msg %></p>
+		<% } %>
     </form>
-
-    <%
-        if(request.getParameter("error") != null) {
-            out.println("<p style='color:red;'>Email ou senha inválidos!</p>");
-        }
-    %>
 </body>
 </html>

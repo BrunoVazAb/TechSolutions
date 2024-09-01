@@ -31,16 +31,22 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
         String senha = request.getParameter("senha");
+    	Boolean login;
 
         administradorModel admin = aDAO.autenticar(email, senha);
 
         if (admin != null) {
             HttpSession session = request.getSession();
             session.setAttribute("admin", admin);
-    			
+        	login = true;
+
     		request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
         } else {
+        	
+        	login= false;
+			request.setAttribute("status", login);
     		request.getRequestDispatcher("/login.jsp").forward(request, response);
+
 
         }
     

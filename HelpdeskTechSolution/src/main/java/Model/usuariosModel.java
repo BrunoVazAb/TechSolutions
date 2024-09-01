@@ -3,6 +3,14 @@ package Model;
 public class usuariosModel {
 	private int id;
 	private String nome,email,senha;
+	
+	public usuariosModel(int id, String nome, String email, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+	}
 
 	public int getId() {
 		return id;
@@ -10,14 +18,6 @@ public class usuariosModel {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public usuariosModel(int id, String nome, String email, String senha) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
 	}
 
 	public String getNome() {
